@@ -9,7 +9,7 @@ st.set_page_config(layout="wide")
 url = "https://raw.githubusercontent.com/mwaskom/seaborn-data/master/taxis.csv"
 df = pd.read_csv(url)
 
-# Ta fonction de correspondance
+# fonction de correspondance
 def image_ville(nom_ville):
     links = {
         "Manhattan": "https://raw.githubusercontent.com/akouvi-lab/projet_streamlit/refs/heads/main/image_manathan.jfif",
@@ -22,7 +22,7 @@ def image_ville(nom_ville):
 
 #st.title("🚖 Bienvenue sur le site web de Akouvi")
 
-# On définit les quartiers pour l'affichage initial de la grille
+# Les quartiers pour l'affichage initial de la grille
 villes_grille = ["Manhattan", "Queens", "Brooklyn", "Bronx"]
 
 # Création de la grille 2x2
@@ -37,7 +37,7 @@ for i in range(0, len(villes_grille), 2):
             st.title("🚖 Bienvenue sur le site web de Akouvi")
             
             # --- LA LISTE DÉROULANTE AVEC LES ARRONDISSEMENTS ---
-            # On récupère la liste de tous les arrondissements possibles dans le DF
+            # récupèration de la liste de tous les arrondissements possibles dans le DF
             liste_arrondissements = df["pickup_borough"].dropna().unique().tolist()
             # On ajoute "nan" manuellement à la liste des choix
             liste_arrondissements.append("nan")
